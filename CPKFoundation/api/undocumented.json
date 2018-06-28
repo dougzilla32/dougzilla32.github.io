@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/NSURLSession+Promise.swift",
+      "line": 19,
+      "symbol": "URLSessionTask.isCancelled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/NSURLSession+Promise.swift",
+      "line": 137,
+      "symbol": "URLSession.uploadTaskCC(_:with:from:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/NSURLSession+Promise.swift",
+      "line": 151,
+      "symbol": "URLSession.uploadTaskCC(_:with:fromFile:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/Process+Promise.swift",
+      "line": 21,
+      "symbol": "Process.cancel()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/Process+Promise.swift",
+      "line": 25,
+      "symbol": "Process.isCancelled",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation"
+}

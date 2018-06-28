@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CLLocationManager Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/CLLocationManager" class="dashAnchor"></a>
+    <a title="CLLocationManager Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CPKCoreLocation Docs</a> (87% documented)</p>
+        <p class="header-right"><a href="https://github.com/dougzilla32/CPKCoreLocation"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdougzilla32%2Egithub%2Eio%2FCPKCoreLocation%2Fapi%2Fdocsets%2FCPKCoreLocation%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CPKCoreLocation Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CLLocationManager Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CLGeocoder.html">CLGeocoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLLocationManager.html">CLLocationManager</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CLLocationManager</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CLLocationManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>To import the <code>CLLocationManager</code> category:</p>
+
+<p>use_frameworks!
+   pod <q>CancelForPromiseKit/CoreLocation</q></p>
+
+<p>And then in your sources:</p>
+
+<p>import PromiseKit
+   import CancelForPromiseKit</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So17CLLocationManagerC15CPKCoreLocationE07requestD2CC19CancelForPromiseKit011CancellableI0CySaySo0A0CGGAB07PMKCoreD0E24RequestAuthorizationTypeO013authorizationO0_SbAIcSg10satisfyingtFZ"></a>
+                    <a name="//apple_ref/swift/Method/requestLocationCC(authorizationType:satisfying:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So17CLLocationManagerC15CPKCoreLocationE07requestD2CC19CancelForPromiseKit011CancellableI0CySaySo0A0CGGAB07PMKCoreD0E24RequestAuthorizationTypeO013authorizationO0_SbAIcSg10satisfyingtFZ">requestLocationCC(authorizationType:satisfying:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Request the current location, with the ability to cancel the request.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    to obtain a single location use <code>Promise.lastValue</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">requestLocationCC</span><span class="p">(</span><span class="nv">authorizationType</span><span class="p">:</span> <span class="kt">RequestAuthorizationType</span> <span class="o">=</span> <span class="o">.</span><span class="n">automatic</span><span class="p">,</span> <span class="n">satisfying</span> <span class="nv">block</span><span class="p">:</span> <span class="p">((</span><span class="kt">CLLocation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLLocation</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authorizationType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>requestAuthorizationType: We read your Info plist and try to
+determine the authorization type we should request automatically. If you
+want to force one or the other, change this parameter from its default
+value.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>block</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block by which to perform any filtering of the locations that are
+returned. In order to only retrieve accurate locations, only return true if the
+locations horizontal accuracy &lt; 50</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A new promise that fulfills with the most recent CLLocation that satisfies
+the provided block if it exists. If the block does not exist, simply return the
+last location.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLLocationManager+Promise.swift#L45-L90">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So17CLLocationManagerC15CPKCoreLocationE9promiseCC19CancelForPromiseKit011CancellableI0CySaySo0A0CGGAB07PMKCoreD0E24RequestAuthorizationTypeO_SbAIcSg10satisfyingtFZ"></a>
+                    <a name="//apple_ref/swift/Method/promiseCC(_:satisfying:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So17CLLocationManagerC15CPKCoreLocationE9promiseCC19CancelForPromiseKit011CancellableI0CySaySo0A0CGGAB07PMKCoreD0E24RequestAuthorizationTypeO_SbAIcSg10satisfyingtFZ">promiseCC(_:satisfying:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">promiseCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">requestAuthorizationType</span><span class="p">:</span> <span class="kt">RequestAuthorizationType</span> <span class="o">=</span> <span class="o">.</span><span class="n">automatic</span><span class="p">,</span> <span class="n">satisfying</span> <span class="nv">block</span><span class="p">:</span> <span class="p">((</span><span class="kt">CLLocation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLLocation</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLLocationManager+Promise.swift#L93-L95">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

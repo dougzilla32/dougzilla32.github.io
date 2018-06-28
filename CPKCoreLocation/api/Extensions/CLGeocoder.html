@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CLGeocoder Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/CLGeocoder" class="dashAnchor"></a>
+    <a title="CLGeocoder Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CPKCoreLocation Docs</a> (87% documented)</p>
+        <p class="header-right"><a href="https://github.com/dougzilla32/CPKCoreLocation"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdougzilla32%2Egithub%2Eio%2FCPKCoreLocation%2Fapi%2Fdocsets%2FCPKCoreLocation%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CPKCoreLocation Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CLGeocoder Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CLGeocoder.html">CLGeocoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLLocationManager.html">CLLocationManager</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CLGeocoder</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CLGeocoder</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>To import the <code>CLGeocoder</code> category:</p>
+
+<p>use_frameworks!
+   pod <q>CancelForPromiseKit/CoreLocation</q></p>
+
+<p>And then in your sources:</p>
+
+<p>import PromiseKit
+   import CancelForPromiseKit</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE16reverseGeocodeCC19CancelForPromiseKit011CancellableI0CySaySo11CLPlacemarkCGGSo10CLLocationC8location_tF"></a>
+                    <a name="//apple_ref/swift/Method/reverseGeocodeCC(location:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE16reverseGeocodeCC19CancelForPromiseKit011CancellableI0CySaySo11CLPlacemarkCGGSo10CLLocationC8location_tF">reverseGeocodeCC(location:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a reverse-geocoding request for the specified location.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">reverseGeocodeCC</span><span class="p">(</span><span class="nv">location</span><span class="p">:</span> <span class="kt">CLLocation</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L35-L41">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGs10DictionaryVyS2SGF"></a>
+                    <a name="//apple_ref/swift/Method/geocodeCC(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGs10DictionaryVyS2SGF">geocodeCC(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a forward-geocoding request using the specified address dictionary.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(iOS, deprecated: 11.0)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">geocodeCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">addressDictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L45-L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGSSF"></a>
+                    <a name="//apple_ref/swift/Method/geocodeCC(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGSSF">geocodeCC(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a forward-geocoding request using the specified address string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">geocodeCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">addressString</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L52-L56">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGSS_So8CLRegionCSg6regiontF"></a>
+                    <a name="//apple_ref/swift/Method/geocodeCC(_:region:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE9geocodeCC19CancelForPromiseKit011CancellableH0CySaySo11CLPlacemarkCGGSS_So8CLRegionCSg6regiontF">geocodeCC(_:region:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a forward-geocoding request using the specified address string within the specified region.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">geocodeCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">addressString</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">region</span><span class="p">:</span> <span class="kt">CLRegion</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L59-L63">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE22geocodePostalAddressCC19CancelForPromiseKit011CancellableJ0CySaySo11CLPlacemarkCGGSo08CNPostalF0CF"></a>
+                    <a name="//apple_ref/swift/Method/geocodePostalAddressCC(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE22geocodePostalAddressCC19CancelForPromiseKit011CancellableJ0CySaySo11CLPlacemarkCGGSo08CNPostalF0CF">geocodePostalAddressCC(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a forward-geocoding request using the specified postal address.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(iOS 11.0, OSX 10.13, watchOS 4.0, *)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">geocodePostalAddressCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">postalAddress</span><span class="p">:</span> <span class="kt">CNPostalAddress</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L68-L72">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10CLGeocoderC15CPKCoreLocationE22geocodePostalAddressCC19CancelForPromiseKit011CancellableJ0CySaySo11CLPlacemarkCGGSo08CNPostalF0C_10Foundation6LocaleVSg09preferredP0tF"></a>
+                    <a name="//apple_ref/swift/Method/geocodePostalAddressCC(_:preferredLocale:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10CLGeocoderC15CPKCoreLocationE22geocodePostalAddressCC19CancelForPromiseKit011CancellableJ0CySaySo11CLPlacemarkCGGSo08CNPostalF0C_10Foundation6LocaleVSg09preferredP0tF">geocodePostalAddressCC(_:preferredLocale:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submits a forward-geocoding requesting using the specified locale and postal address</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@available(iOS 11.0, OSX 10.13, watchOS 4.0, *)</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">geocodePostalAddressCC</span><span class="p">(</span><span class="n">_</span> <span class="nv">postalAddress</span><span class="p">:</span> <span class="kt">CNPostalAddress</span><span class="p">,</span> <span class="n">preferredLocale</span> <span class="nv">locale</span><span class="p">:</span> <span class="kt">Locale</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">CLPlacemark</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKCoreLocation/tree/master/Sources/CLGeocoder+Promise.swift#L76-L80">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

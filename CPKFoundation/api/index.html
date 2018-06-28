@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CPKFoundation  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="CPKFoundation  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">CPKFoundation Docs</a> (54% documented)</p>
+        <p class="header-right"><a href="https://github.com/dougzilla32/CPKFoundation"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdougzilla32%2Egithub%2Eio%2FCPKFoundation%2Fapi%2Fdocsets%2FCPKFoundation%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">CPKFoundation Reference</a>
+        <img id="carat" src="img/carat.png" />
+        CPKFoundation  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/NSObject.html">NSObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/NotificationCenter.html">NotificationCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Process.html">Process</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/URLSession.html">URLSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/URLSessionTask.html">URLSessionTask</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='cancelforpromisekit-foundation-extensions-img-src-https-travis-ci-org-dougzilla32-cpkcorelocation-svg-branch-master-alt-build-status' class='heading'>CancelForPromiseKit Foundation Extensions <img src="https://travis-ci.org/dougzilla32/CPKCoreLocation.svg?branch=master" alt="Build Status"></h1>
+
+<p>This project adds cancellable promises to <a href="https://github.com/PromiseKit/Foundation">PromiseKit&rsquo;s Foundation extension</a>.</p>
+
+<p>We support iOS, tvOS, watchOS, macOS, Swift 3.0, 3.1, 3.2, 4.0 and 4.1.</p>
+<h2 id='cococapods' class='heading'>CococaPods</h2>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"CancelForPromiseKit/Foundation"</span><span class="p">,</span> <span class="s2">"~&gt; 1.0"</span>
+</code></pre>
+
+<p>The extensions are built into <code>CancelForPromiseKit.framework</code> thus nothing else is needed.</p>
+<h2 id='carthage' class='heading'>Carthage</h2>
+<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"CancelForPromiseKit/Foundation"</span> <span class="o">~&gt;</span> <span class="mf">1.0</span>
+</code></pre>
+
+<p>The extensions are built into their own framework:</p>
+<pre class="highlight swift"><code><span class="c1">// swift</span>
+<span class="kd">import</span> <span class="kt">PromiseKit</span>
+<span class="kd">import</span> <span class="kt">CancelForPromiseKit</span>
+<span class="kd">import</span> <span class="kt">CPKFoundation</span>
+</code></pre>
+
+<p>To build with Carthage on versions of Swift prior to 4.1, set the &lsquo;Carthage&rsquo; flag in your target&rsquo;s Build settings at the following location. This is necessary to properly import the PMKFoundation module, which is only defined for Carthage:</p>
+<pre class="highlight plaintext"><code>TARGETS -&gt; [Your target name]:
+    'Swift Compiler - Custom Flags' -&gt; 'Active Compilation Conditions' -&gt; 'Debug'
+    'Swift Compiler - Custom Flags' -&gt; 'Active Compilation Conditions' -&gt; 'Release'
+</code></pre>
+<h2 id='swiftpm' class='heading'>SwiftPM</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/CancelForPromiseKit/Foundation.git"</span><span class="p">,</span> <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

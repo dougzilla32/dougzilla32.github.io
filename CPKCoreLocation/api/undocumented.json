@@ -1,0 +1,12 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/CoreLocation/Sources/CLLocationManager+Promise.swift",
+      "line": 93,
+      "symbol": "CLLocationManager.promiseCC(_:satisfying:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/CoreLocation"
+}

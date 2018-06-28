@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>URLSession Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/URLSession" class="dashAnchor"></a>
+    <a title="URLSession Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CPKFoundation Docs</a> (54% documented)</p>
+        <p class="header-right"><a href="https://github.com/dougzilla32/CPKFoundation"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdougzilla32%2Egithub%2Eio%2FCPKFoundation%2Fapi%2Fdocsets%2FCPKFoundation%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CPKFoundation Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        URLSession Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/NSObject.html">NSObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NotificationCenter.html">NotificationCenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Process.html">Process</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLSession.html">URLSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URLSessionTask.html">URLSessionTask</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>URLSession</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">URLSession</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>To import the <code>NSURLSession</code> category:</p>
+
+<p>use_frameworks!
+   pod <q>CancelForPromiseKit/Foundation</q></p>
+
+<p>Or <code>NSURLSession</code> is one of the categories imported by the umbrella pod:</p>
+
+<p>use_frameworks!
+   pod <q>CancelForPromiseKit</q></p>
+
+<p>And then in your sources:</p>
+
+<p>import PromiseKit
+   import CancelForPromiseKit</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10URLSessionC13CPKFoundationE10dataTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV0C0_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withtF"></a>
+                    <a name="//apple_ref/swift/Method/dataTaskCC(_:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10URLSessionC13CPKFoundationE10dataTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV0C0_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withtF">dataTaskCC(_:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Example usage with explicit cancel context:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">compactMap</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="k">try</span> <span class="kt">JSONSerialization</span><span class="o">.</span><span class="nf">jsonObject</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">json</span> <span class="k">in</span>
+    <span class="c1">//…</span>
+<span class="p">}</span><span class="o">.</span><span class="n">cancelContext</span>
+<span class="c1">//…</span>
+<span class="n">context</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+
+<p>Example usage with implicit cancel context:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">promise</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">compactMap</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="k">try</span> <span class="kt">JSONSerialization</span><span class="o">.</span><span class="nf">jsonObject</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">as?</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">json</span> <span class="k">in</span>
+    <span class="c1">//…</span>
+<span class="p">}</span>
+<span class="c1">//…</span>
+<span class="n">promise</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+
+<p>We recommend the use of <a href="https://github.com/mxcl/OMGHTTPURLRQ">OMGHTTPURLRQ</a> which allows you to construct correct REST requests:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">rq</span> <span class="o">=</span> <span class="kt">OMGHTTPURLRQ</span><span class="o">.</span><span class="kt">POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nv">json</span><span class="p">:</span> <span class="n">parameters</span><span class="p">)</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">urlResponse</span> <span class="k">in</span>
+    <span class="c1">//…</span>
+<span class="p">}</span><span class="o">.</span><span class="n">cancelContext</span>
+<span class="c1">//…</span>
+<span class="n">context</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+
+<p>We provide a convenience initializer for <code>String</code> specifically for this promise:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">compactMap</span><span class="p">(</span><span class="kt">String</span><span class="o">.</span><span class="kd">init</span><span class="p">)</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+    <span class="c1">// decoded per the string encoding specified by the server</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="n">string</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="s">"response: string"</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">//…</span>
+<span class="n">context</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+
+<p>Other common types can be easily decoded using compactMap also:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">compactMap</span> <span class="p">{</span>
+    <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="nv">$0</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="nv">$0</span>
+<span class="p">}</span>
+<span class="c1">//…</span>
+<span class="n">context</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+
+<p>Though if you do decode the image this way, we recommend inflating it on a background thread
+first as this will improve main thread performance when rendering the image:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">context</span> <span class="o">=</span> <span class="n">firstly</span> <span class="p">{</span>
+    <span class="kt">URLSession</span><span class="o">.</span><span class="n">shared</span><span class="o">.</span><span class="nf">dataTaskCC</span><span class="p">(</span><span class="o">.</span><span class="n">promise</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="n">rq</span><span class="p">)</span>
+<span class="p">}</span><span class="o">.</span><span class="nf">compactMap</span><span class="p">(</span><span class="nv">on</span><span class="p">:</span> <span class="kt">QoS</span><span class="o">.</span><span class="n">userInitiated</span><span class="p">)</span> <span class="p">{</span> <span class="n">data</span><span class="p">,</span> <span class="n">_</span> <span class="k">in</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">img</span> <span class="o">=</span> <span class="kt">UIImage</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">)</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">}</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">cgImage</span><span class="p">?</span><span class="o">.</span><span class="n">dataProvider</span><span class="p">?</span><span class="o">.</span><span class="n">data</span>
+    <span class="k">return</span> <span class="n">img</span>
+<span class="p">}</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">imageView</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="nv">$0</span>
+<span class="p">}</span>
+<span class="c1">//…</span>
+<span class="n">context</span><span class="o">.</span><span class="nf">cancel</span><span class="p">()</span>
+</code></pre>
+<div class="aside aside-see-also">
+    <p class="aside-title">See also</p>
+    <a href="https://github.com/mxcl/OMGHTTPURLRQ">OMGHTTPURLRQ</a>
+
+</div>
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    We deliberately don’t provide a <code>URLRequestConvertible</code> for <code>String</code> because in our experience, you should be explicit with this error path to make good apps.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dataTaskCC</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">PMKNamespacer</span><span class="p">,</span> <span class="n">with</span> <span class="nv">convertible</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>convertible</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A URL or URLRequest.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A cancellable promise that represents the URL request.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSURLSession+Promise.swift#L123-L135">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10URLSessionC13CPKFoundationE12uploadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV4data_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAJ4fromtF"></a>
+                    <a name="//apple_ref/swift/Method/uploadTaskCC(_:with:from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10URLSessionC13CPKFoundationE12uploadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV4data_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAJ4fromtF">uploadTaskCC(_:with:from:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">uploadTaskCC</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">PMKNamespacer</span><span class="p">,</span> <span class="n">with</span> <span class="nv">convertible</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span><span class="p">,</span> <span class="n">from</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSURLSession+Promise.swift#L137-L149">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10URLSessionC13CPKFoundationE12uploadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV4data_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAH3URLV8fromFiletF"></a>
+                    <a name="//apple_ref/swift/Method/uploadTaskCC(_:with:fromFile:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10URLSessionC13CPKFoundationE12uploadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation4DataV4data_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAH3URLV8fromFiletF">uploadTaskCC(_:with:fromFile:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">uploadTaskCC</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">PMKNamespacer</span><span class="p">,</span> <span class="n">with</span> <span class="nv">convertible</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span><span class="p">,</span> <span class="n">fromFile</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSURLSession+Promise.swift#L151-L163">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:So10URLSessionC13CPKFoundationE14downloadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation3URLV12saveLocation_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAJ2totF"></a>
+                    <a name="//apple_ref/swift/Method/downloadTaskCC(_:with:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:So10URLSessionC13CPKFoundationE14downloadTaskCC19CancelForPromiseKit011CancellableH0Cy10Foundation3URLV12saveLocation_So11URLResponseC8responsetG0hI013PMKNamespacerO_13PMKFoundation21URLRequestConvertible_p4withAJ2totF">downloadTaskCC(_:with:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    we force a <code>to</code> parameter because Apple deletes the downloaded file immediately after the underyling completion handler returns.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">downloadTaskCC</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">PMKNamespacer</span><span class="p">,</span> <span class="n">with</span> <span class="nv">convertible</span><span class="p">:</span> <span class="kt">URLRequestConvertible</span><span class="p">,</span> <span class="n">to</span> <span class="nv">saveLocation</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">(</span><span class="nv">saveLocation</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">response</span><span class="p">:</span> <span class="kt">URLResponse</span><span class="p">)</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSURLSession+Promise.swift#L166-L191">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-27)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

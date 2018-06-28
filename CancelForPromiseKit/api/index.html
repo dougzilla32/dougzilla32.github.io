@@ -15,7 +15,7 @@
       <div class="content-wrapper">
         <p><a href="index.html">CancelForPromiseKit Docs</a> (100% documented)</p>
         <p class="header-right"><a href="https://github.com/dougzilla32/CancelForPromiseKit"><img src="img/gh.png"/>View on GitHub</a></p>
-        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fgithub%2Ecom%2Fdougzilla32%2FCancelForPromiseKit%2Fdocsets%2FCancelForPromiseKit%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdougzilla32%2Egithub%2Eio%2FCancelForPromiseKit%2Fapi%2Fdocsets%2FCancelForPromiseKit%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -200,13 +200,13 @@
             
             <h1 id='cancelforpromisekit' class='heading'>CancelForPromiseKit</h1>
 
-<p><img src="https://img.shields.io/cocoapods/v/CancelForPromiseKit.svg?label=version" alt="badge-pod"> <img src="https://img.shields.io/badge/languages-Swift-orange.svg" alt="badge-languages"> <img src="https://img.shields.io/badge/supports-CocoaPods%20%7C%20Carthage%20%7C%20SwiftPM-green.svg" alt="badge-pms"> <img src="https://img.shields.io/cocoapods/p/CancelForPromiseKit.svg" alt="badge-platforms"> ![badge-mit] <a href="https://travis-ci.org/dougzilla32/CancelForPromiseKit"><img src="https://travis-ci.org/dougzilla32/CancelForPromiseKit.svg?branch=master" alt="Build Status"></a></p>
+<p><img src="https://img.shields.io/cocoapods/v/CancelForPromiseKit.svg?label=version" alt="badge-pod"> <img src="https://img.shields.io/badge/languages-Swift-orange.svg" alt="badge-languages"> <img src="https://img.shields.io/badge/supports-CocoaPods%20%7C%20Carthage%20%7C%20SwiftPM-green.svg" alt="badge-pms"> <img src="https://img.shields.io/cocoapods/p/CancelForPromiseKit.svg" alt="badge-platforms"> ![badge-mit] <a href="https://travis-ci.org/dougzilla32/CancelForPromiseKit"><img src="https://travis-ci.org/dougzilla32/CancelForPromiseKit.svg?branch=master" alt="Build Status"></a> <img src="https://dougzilla32.github.io/CancelForPromiseKit/api/badge.svg" alt="badge-docs"></p>
 
 <hr>
 
 <p>CancelForPromiseKit provides clear and concise cancellation abilities for <a href="https://github.com/mxcl/PromiseKit">PromiseKit</a> and the <a href="https://github.com/PromiseKit">PromiseKit Extensions</a>.  While PromiseKit includes basic support for cancellation, CancelForPromiseKit extends this to make cancelling promises and their associated tasks simple and straightforward.</p>
 
-<p>This README has the same structure as the <a href="https://github.com/mxcl/PromiseKit/blob/master/README.md">PromiseKit README</a>, with cancellation added to the sample code blocks:</p>
+<p>For example:</p>
 
 <pre><code>UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
@@ -235,9 +235,14 @@ let fetchLocation = CLLocationManager.requestLocation<mark><b>CC</b></mark>().la
 </code></pre>
 
 <p>Note: For all code samples, the differences between PromiseKit and CancelForPromiseKit are highlighted in bold.</p>
-<h1 id='goals' class='heading'>Goals</h1>
+<h1 id='getting-started-examples' class='heading'>Getting Started Examples</h1>
 
-<p>The goals of this project are to:</p>
+<ul>
+<li><p><strong>Cancel a chain</strong></p></li>
+<li><p><strong>Mix Promise and CancellablePromise, cancel some branches and not other branches</strong></p></li>
+<li><p><strong>Use the &lsquo;delegate&rsquo; promise</strong></p></li>
+</ul>
+<h1 id='design-goals' class='heading'>Design Goals</h1>
 
 <ul>
 <li><strong>Provide a streamlined way to cancel a promise chain, which rejects all associated promises and cancels all associated tasks. For example:</strong></li>
@@ -302,7 +307,7 @@ func getForecast(forCity name: String) -> <mark><b>CancellablePromise</b></mark>
     }
 }
 </code></pre>
-<h1 id='quick-start' class='heading'>Quick Start</h1>
+<h1 id='quick-start-with-cocoapods' class='heading'>Quick Start with CocoaPods</h1>
 
 <p>In your <a href="https://guides.cocoapods.org/syntax/podfile.html">Podfile</a>:</p>
 
@@ -314,11 +319,13 @@ target "Change Me!" do
 end
 </code></pre>
 
-<p>CancelForPromiseKit has the same platform and XCode support as PromiseKit</p>
+<p>CancelForPromiseKit has the same platform and Xcode support as PromiseKit</p>
 <h1 id='documentation' class='heading'>Documentation</h1>
 
 <p>The following functions and methods are part of the core CancelForPromiseKit module.  Functions and Methods with the <b>CC</b> suffix create a new CancellablePromise,
-and those without the <b>CC</b> suffix accept an existing CancellablePromise:</p>
+and those without the <b>CC</b> suffix accept an existing CancellablePromise.</p>
+
+<p>View the Jazzy generated <a href="https://dougzilla32.github.io/CancelForPromiseKit/api/">CancelForPromiseKit API documentation</a>.</p>
 
 <pre><code>Global functions (all returning <mark><b>CancellablePromise</b></mark> unless otherwise noted)
     after<mark><b>CC</b></mark>(seconds:)
@@ -545,7 +552,7 @@ func makeUrlRequest() throws -> URLRequest {
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-20)</p>
+          <p>&copy; 2018 <a class="link" href="https://github.com/dougzilla32" target="_blank" rel="external">Doug</a>. All rights reserved. (Last updated: 2018-06-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
