@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NotificationCenter Extension Reference</title>
+    <title>CancellablePromise Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/NotificationCenter" class="dashAnchor"></a>
-    <a title="NotificationCenter Extension Reference"></a>
+    <a name="//apple_ref/swift/Extension/CancellablePromise" class="dashAnchor"></a>
+    <a title="CancellablePromise Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">CPKFoundation Docs</a> (92% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">CPKFoundation Reference</a>
         <img id="carat" src="../img/carat.png" />
-        NotificationCenter Extension Reference
+        CancellablePromise Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -65,28 +65,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>NotificationCenter</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NotificationCenter</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                </div>
-              </div>
-            <p>To import the cancellable <code>NSNotificationCenter</code> category:</p>
-
-<p>use_frameworks!
-pod <q>CancelForPromiseKit/Foundation</q></p>
-
-<p>Or cancellable <code>NSNotificationCenter</code> is one of the categories imported by the umbrella pod:</p>
-
-<p>use_frameworks!
-pod <q>CancelForPromiseKit</q></p>
-
-<p>And then in your sources:</p>
-
-<p>import PromiseKit
-import CancelForPromiseKit</p>
-
+            <h1>CancellablePromise</h1>
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -94,9 +74,9 @@ import CancelForPromiseKit</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:So18NotificationCenterC13CPKFoundationE9observeCCXeXeF"></a>
-                    <a name="//apple_ref/swift/Method/observeCC(once:object:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:So18NotificationCenterC13CPKFoundationE9observeCCXeXeF">observeCC(once:object:)</a>
+                    <a name="/s:13CPKFoundation8validateXeXeF"></a>
+                    <a name="//apple_ref/swift/Method/validate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13CPKFoundation8validateXeXeF">validate()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -104,19 +84,19 @@ import CancelForPromiseKit</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Observe the named notification once</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">observeCC</span><span class="p">(</span><span class="n">once</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">Notification</span><span class="o">.</span><span class="kt">Name</span><span class="p">,</span> <span class="nv">object</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Notification</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">validate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSNotificationCenter+Promise.swift#L35-L47">Show on GitHub</a>
+                        <a href="https://github.com/dougzilla32/CPKFoundation/tree/master/Sources/NSURLSession+Promise.swift#L213-L223">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

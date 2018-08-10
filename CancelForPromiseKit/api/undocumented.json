@@ -1,6 +1,12 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/doug/Desktop/Xcode Projects/Libraries/CancelForPromiseKit/Sources/CancellableThenable.swift",
+      "line": 501,
+      "symbol": "CancellableThenable.firstValue(on:flags:where:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit"
+  "source_directory": "/Users/doug/Desktop/Xcode Projects/Libraries/CancelForPromiseKit"
 }

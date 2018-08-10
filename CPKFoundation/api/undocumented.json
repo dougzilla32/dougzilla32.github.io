@@ -1,6 +1,12 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/doug/Desktop/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation/Sources/NSURLSession+Promise.swift",
+      "line": 213,
+      "symbol": "CancellablePromise.validate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
-  "source_directory": "/Users/doug/Desktop/Dropbox/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation"
+  "source_directory": "/Users/doug/Desktop/Xcode Projects/Libraries/CancelForPromiseKit/Extensions/Foundation"
 }
